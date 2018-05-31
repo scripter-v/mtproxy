@@ -1,0 +1,16 @@
+version: '2.0'
+
+services:
+    mtproxy:
+        image: telegrammessenger/proxy:latest
+        hostname: mtproxy
+        container_name: mtproxy.local
+        volumes:
+            - proxy-config:/data
+        network_mode: "host"
+        restart: unless-stopped
+        env_file:
+            - ./config.env
+volumes:
+    proxy-config:
+        external: true
