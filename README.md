@@ -6,7 +6,7 @@ create volume:
 docker volume create --name=proxy-config
 ```
 
-create key:
+create key (to write to SECRET in config.env):
 ```
 openssl rand -hex 16
 ```
